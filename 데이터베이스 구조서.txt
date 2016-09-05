@@ -1,0 +1,14 @@
+
+하나의 테이블의 구조.
+
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| result    | varchar(256) | YES  |     | NULL    |                |
+| original  | varchar(256) | YES  |     | NULL    |                |
+| date      | varchar(10)  | YES  |     | NULL    |                |
+| time      | varchar(10)  | YES  |     | NULL    |                |
+| id        | int(11)      | NO   | PRI | NULL    | auto_increment |
+| from_lang | varchar(2)   | YES  |     | NULL    |                |
+| to_lang   | varchar(2)   | YES  |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
