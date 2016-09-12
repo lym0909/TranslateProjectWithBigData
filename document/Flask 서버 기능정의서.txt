@@ -1,0 +1,23 @@
+main.py 모듈
+	- Flask의 서비스를 이용하여 웹페이지의 주소를 호스팅함.
+	- @app.route('/translate', methods=['POST']) : debug 용 test method(POST방식으로 데이터 입력 받음)
+	- @app.route('translate/<langFrom>/<langTo>/<senten>', methods=['GET']) : 위의 메소드와 동일하나 GET 방식
+	- @app.route('/translate') : 정적 html 문서(translateSite.html)를 display
+
+translate.py 모듈
+	- mstranslator를 이용한 번역 메소드 제공
+	- 언어 배열 ["af", "sq", "ar","be", "bg", "ca", "zh-CN", "zh-TW", "hr",
+             "cs", "da", "nl", "en", "et", "tl", "fi", "fr", "gl", "de",
+             "el", "iw", "hi", "hu", "is", "id", "ga", "it", "ja", "ko",
+             "lv", "lt", "mk", "ms", "mt", "no", "fa", "pl", "pt", "ro",
+             "ru", "sr", "sk", "sl", "es", "sw", "sv", "th", "tr", "uk",
+             "vi", "cy", "yi"] 제공(위의 언어들 모두 번역 가능)
+	- saveData(host, user, passwd, db, result, original, from_lang to_lang, tableName):
+		: MySQL과 연동하여 번역 결과를 데이터베이스 테이블 구조에 맞추어 저장한다.
+	- translate_ms(mstr, lang_from, lang_to)
+		: 원본의 mstranslator 이용하여 mstr을 lang_from의 언어에서 lang_to의 언어로 번역하고 이 결과를 리턴함.
+
+dateTime.py 모듈
+	- 기본적으로 이 모듈은 데이터베이스의 저장 과정에서 날짜 및 시간 데이터를 얻어 오는 용도로 사용하는 보조 모듈임.
+	- getCurrentData() : 현재 날짜를 20xx.xx.xx 의 형식으로 가공 후 문자열의 형태로 반환한다.
+	- getCurrentTime() : 현재 시간을 xx:xx:xx(시간, 분, 초)의 형식으로 가공 후 문자열의 형태로 반환한다.
