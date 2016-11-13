@@ -52,3 +52,59 @@ def translate_ms(mstr, lang_from, lang_to):
     return json.dumps(forReturn, ensure_ascii=False)
 
         
+def getDB():
+	dBase = MySQLdb.connect('localhost', 'root', '0000', 'python_test', charset='utf8', use_unicode=True)
+	cursor = dBase.cursor(MySQLdb.cursors.DictCursor)
+	
+	cursor.execute("use " + "python_test")
+	cursor.execute("select * from " + "test")
+	
+	dbData = cursor.fetchall()
+	
+	dBase.commit()
+	
+	cursor.close()
+	dBase.close()
+	
+	return dbData	
+	
+def getStatisticData():
+	
+	enToko = 0
+	
+	koToja = 0
+	koToca = 0
+	
+	enToja = 0
+	enToca = 0
+	
+	koTofr = 0
+	koToda = 0
+	
+	koToen = 0
+	
+	data = getDB()
+	
+	for a in data:
+		if a['from_lang'] == 'en' and a['to_lang'] == 'ko':
+			enToko+=1
+		if a['from_lang'] == 'ko' and a['to_lang'] == 'ja':
+			koToja+=1
+		if a['from_lang'] == 'ko' and a['to_lang'] == 'ca':
+			koToca+=1
+		if a['from_lang'] == 'en' and a['to_lang'] == 'ja':
+			enToja+=1
+		if a['from_lang'] == 'en' and a['to_lang'] == 'ca':
+			enToca+=1
+		if a['from_lang'] == 'ko' and a['to_lang'] == 'fr':
+			koTofr+=1
+		if a['from_lang'] == 'ko' and a['to_lang'] == 'da':
+			koToda+=1
+		if a['from_lang'] == 'ko' and a['to_lang'] == 'en':
+			koToen+=1
+			
+	info = [enToko, koToja, koToca, enToja, enToca, koTofr, koToda, koToen]
+	return info
+
+		
+		

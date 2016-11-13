@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>번역기</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        TranslateProject
+                    </a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5000/translate">번역</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5000/statistics">통계</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5000/history">기록</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5000/infomation">정보</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>개발 정보</h1>
+                        <p><b>개발자</b> : <i>이유민</i></p>
+                        				<p><b>e-mail</b> : <i>pgwy9990@gmail.com</i></p>
+                        <br>
+                        <p><b>-외부 api 및 프로그램 사용 목록</b></p>
+                        <p><code>Python</code> : 이 프로그램의 기반이 됨. <i>(https://www.python.org)</i></p>
+                        <p><code>goslate</code> : google의 번역 서비스를 이용 가능케 함. <i>(https://pythonhosted.org/goslate)</i></p>
+                        <p><code>mstranslator</code> : ms의 번역 서비스를 이용 가능케 함. <i>(https://pypi.python.org/pypi/mstranslator/0.2.6)</i></p>
+						<p><code>MySQL</code> : python에서 mysql 데이터베이스와 연동 가능하게 함. <i>(https://pypi.python.org/pypi/mstranslator/0.2.6)</i></p>
+						<p><code>flask</code> : python으로 웹 서버를 구현 가능하게 함. <i>(http://flask.pocoo.org)</i></p>
+						<p><code>Eclipse</code> : 개발 IDE. <i>(https://www.eclipse.org)</i></p>
+						<p><code>BootStrap</code> : html페이지 제작. <i>(http://getbootstrap.com)</i></p>
+						<p><code>W3Schools</code> : html페이지 제작 참고. <i>(http://www.w3schools.com)</i></p>
+						<p><code>startbootstrap</code> : bootstrap 템플릿 참고. <i>(https://startbootstrap.com/template-overviews/simple-sidebar)</i></p>
+						<br>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">메뉴 숨기기/열기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

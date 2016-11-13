@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>번역기</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                    	TranslateProject
+                    </a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5000/translate">번역</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5000/statistics">통계</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5000/history">기록</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5000/infomation">정보</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>번역 서비스</h1>
+                        <form action="http://127.0.0.1:5000/translate" method="post">
+							<input type="hidden" name = "value1" value="">
+							<input type="hidden" name = "value2" value="">
+							
+							<div class="form-group">
+  								<label for="sel1"><code>번역대상 언어:</code></label>
+  								<select class="form-control" name="from">
+  									<option selected>--------선택하세요--------
+  									<option>ko
+									<option>en
+									<option>af
+									<option>sq
+									<option>ar
+									<option>be
+									<option>bg
+									<option>ca
+									<option>hr
+									<option>cs 
+									<option>da
+									<option>nl
+									<option>et
+									<option>tl
+									<option>fi
+									<option>fr
+									<option>gl
+									<option>de
+									<option>el
+									<option>iw
+									<option>hi
+									<option>hu
+									<option>is
+									<option>id
+									<option>ga
+									<option>it
+									<option>ja
+									<option>ko
+									<option>lv
+									<option>lt
+									<option>mk
+									<option>ms
+									<option>mt
+									<option>no
+									<option>fa
+									<option>pl
+									<option>pt
+									<option>ro
+									<option>ru
+									<option>sr
+									<option>sk
+									<option>sl
+									<option>es
+									<option>sw
+									<option>sv
+									<option>th
+									<option>tr
+									<option>uk
+									<option>vi
+									<option>cy
+									<option>yi
+  								</select>
+							</div>
+						
+							<div class="form-group">
+								<label for="sel1"><code>번역할 언어:</code></label>
+  								<select class="form-control" name="to">
+  									<option selected>--------선택하세요--------
+  									<option>ko
+									<option>en
+									<option>af
+									<option>sq
+									<option>ar
+									<option>be
+									<option>bg
+									<option>ca
+									<option>hr
+									<option>cs 
+									<option>da
+									<option>nl
+									<option>et
+									<option>tl
+									<option>fi
+									<option>fr
+									<option>gl
+									<option>de
+									<option>el
+									<option>iw
+									<option>hi
+									<option>hu
+									<option>is
+									<option>id
+									<option>ga
+									<option>it
+									<option>ja
+									<option>ko
+									<option>lv
+									<option>lt
+									<option>mk
+									<option>ms
+									<option>mt
+									<option>no
+									<option>fa
+									<option>pl
+									<option>pt
+									<option>ro
+									<option>ru
+									<option>sr
+									<option>sk
+									<option>sl
+									<option>es
+									<option>sw
+									<option>sv
+									<option>th
+									<option>tr
+									<option>uk
+									<option>vi
+									<option>cy
+									<option>yi
+  								</select>
+							</div>
+
+						
+                        	<div class="form-group">
+  								<label for="comment">번역할 내용:</label>
+  								<textarea class="form-control" rows="5" name="original">{{original}}</textarea>
+							</div>
+						
+                        	<button type="submit" class="btn btn-default">번역</button>
+
+                        <br>
+                        <br>
+						
+                        	<div class="form-group">
+  								<label for="comment">결과:</label>
+  								<textarea class="form-control" rows="5" name="result">{{result}}</textarea>
+							</div>
+							
+						</form>
+						
+						<br>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><b>메뉴 숨기기/열기</b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
